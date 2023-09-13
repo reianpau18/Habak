@@ -13,7 +13,7 @@ define(['jquery', 'products/defineCategories',
 	'owlCarousel', 'waitImg', 'velocity', 'underscore', 'scroll'
 ], function($, list, 
 	CategoryCollection, CategoryModel, CategoryListView,
-	CategorySliderView, ItemsColelction, FormCollection, ModalView, FormModel, FormView
+	CategorySliderView, ItemsCollection, FormCollection, ModalView, FormModel, FormView
 ){
 	"use strict";
 
@@ -27,7 +27,7 @@ define(['jquery', 'products/defineCategories',
 	var Products = {
 		init: function () {
 			// Create items collection
-			window.ItemsCollection = new ItemsColelction();
+			window.ItemsCollection = new ItemsCollection();
 
 			// Create category collection
 			$.each(list, function() {
