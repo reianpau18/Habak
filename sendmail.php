@@ -1,5 +1,16 @@
 <?php
 
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
 $name_field = check_input($_POST["name_field"]);
 $mail_field = check_input($_POST["mail_field"]);
 $phone_field = check_input($_POST["phone_field"]);
@@ -7,7 +18,24 @@ $prod_list = check_input($_POST["prCode_field"]);
 $subject_field = check_input($_POST["subject_field"]);
 $message_field = check_input($_POST["message_field"]);
 
-$to = "service_ow4mrud@gmail.com";
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'reianpau18@gmail.com';                     //SMTP username
+    $mail->Password   = 'zjhq wwcg stvr hoql';                               //SMTP password
+    $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('reianpau18@gmail.com', 'reianpau');
+    $mail->addAddress('reianpau18@gmail.com', 'reianpau');     //Add a recipient
+
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
 
 if ($message_field!=="") {
     $subject = "Callback! From the site -HABAK- was sent an message!";
@@ -70,4 +98,10 @@ function check_input($data, $problem = ""){
 function show_error($myError) {
     echo $myError;
     exit();
+}
+
+$mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
