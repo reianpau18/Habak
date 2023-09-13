@@ -19,19 +19,19 @@ $subject_field = check_input($_POST["subject_field"]);
 $message_field = check_input($_POST["message_field"]);
 
 try {
-    //Server settings
+        //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'reianpau18@gmail.com';                     //SMTP username
-    $mail->Password   = 'zjhq wwcg stvr hoql';                               //SMTP password
+    $mail->Username   = 'reianthegreat18@gmail.com';                     //SMTP username
+    $mail->Password   = 'wmlpwsjzifyxjphc';                               //SMTP password
     $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('reianpau18@gmail.com', 'reianpau');
-    $mail->addAddress('reianpau18@gmail.com', 'reianpau');     //Add a recipient
+    $mail->setFrom('reianthegreat18@gmail.com', 'reianpau');
+    $mail->addAddress('reianthegreat18@gmail.com', 'reianpau');     //Add a recipient
 
 
     //Content
