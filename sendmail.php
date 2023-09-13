@@ -7,10 +7,10 @@ $prod_list = check_input($_POST["prCode_field"]);
 $subject_field = check_input($_POST["subject_field"]);
 $message_field = check_input($_POST["message_field"]);
 
-$to = "reianthegreat18@gmail.com";
+$myemail = "reianthegreat18@gmail.com";
 
 if ($message_field!=="") {
-    $subject = "Callback! From the site -Triablo- was sent an message!";
+    $subject = "Callback! From the site -HABAK- was sent an message!";
     $message = file_get_contents('templates/message.html');
 
     // Fill form

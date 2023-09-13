@@ -32,7 +32,15 @@
 
     <!-- <link href="favicon.ico" rel="icon" type="image/x-icon" /> -->
     <link rel="icon" type="ico" href="favicon.ico" sizes="32x32" />
-
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("aI1AiGGeNpGd5c3v7");
+      })();
+    </script>
     <script src="js/lib/modernizr.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
   </head>
@@ -513,6 +521,7 @@
                         placeholder="Name"
                         id="name_field"
                         class="fillable-field required custom-reveal"
+                        required
                       />
 
                       <span class="mail-field l-pos-r">
@@ -522,6 +531,7 @@
                           name="mail_field"
                           id="mail_field"
                           class="fillable-field required custom-reveal"
+                          required
                         />
                       </span>
 
@@ -531,6 +541,7 @@
                         name="phone_field"
                         id="phone_field"
                         class="fillable-field required custom-reveal"
+                        required
                       />
 
                       <input
@@ -538,6 +549,7 @@
                         name="prCode_field"
                         id="prCode_field"
                         class="fillable-field l-hidden required custom-reveal products-code-list"
+                        required
                       />
 
                       <input
