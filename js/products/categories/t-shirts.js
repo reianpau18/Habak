@@ -14,6 +14,7 @@ define([], function(){
 				},
 				code: "HB001",
 				details: "",
+				stock: "",
 				thumb: "Habakblack.jpg",
 				gallery: ["Habakblack.jpg"]
 			},
@@ -24,6 +25,7 @@ define([], function(){
 				},
 				code: "HB002",
 				details: "",
+				stock: "",
 				thumb: "Habakblack.jpg",
 				gallery: ["Habakblack.jpg"]
 			},
@@ -34,6 +36,7 @@ define([], function(){
 				},
 				code: "HB003",
 				details: "",
+				stock: "",
 				thumb: "Habakblack.jpg",
 				gallery: ["Habakblack.jpg"]
 			},
@@ -44,6 +47,7 @@ define([], function(){
 				},
 				code: "HB004",
 				details: "",
+				stock: "",
 				thumb: "Habakblack.jpg",
 				gallery: ["Habakblack.jpg"]
 			},
@@ -54,6 +58,7 @@ define([], function(){
 				},
 				code: "HB005",
 				details: "",
+				stock: "",
 				thumb: "Habakwhite.jpg",
 				gallery: ["Habakwhite.jpg"]
 			},
@@ -64,6 +69,7 @@ define([], function(){
 				},
 				code: "HB006",
 				details: "",
+				stock: "",
 				thumb: "Habakwhite.jpg",
 				gallery: ["Habakwhite.jpg"]
 			},
@@ -74,6 +80,7 @@ define([], function(){
 				},
 				code: "HB007",
 				details: "",
+				stock: "",
 				thumb: "Habakwhite.jpg",
 				gallery: ["Habakwhite.jpg"]
 			},
@@ -84,6 +91,7 @@ define([], function(){
 				},
 				code: "HB008",
 				details: "",
+				stock: "",
 				thumb: "Habakwhite.jpg",
 				gallery: ["Habakwhite.jpg"]
 			},
