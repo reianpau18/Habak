@@ -7,11 +7,11 @@ $prod_list = check_input($_POST["prCode_field"]);
 $subject_field = check_input($_POST["subject_field"]);
 $message_field = check_input($_POST["message_field"]);
 
-$from = "reianpau18@habakclothing.store";
-$to = "reianpau18@habakclothing.store";
+//$from = "reianpau18@habakclothing.store";
+$to = "reianthegreat18@gmail.com";
 
 
-if ($message_field!=="") {
+if ($message_field !== "") {
     $subject = "Callback! From the site -HABAK- was sent an message!";
     $message = file_get_contents('templates/message.html');
 
@@ -42,9 +42,10 @@ if ($message_field!=="") {
             $background = '';
         }
 
-        $item = '<tr '.$background.' align="center" style="border-bottom: 1px solid #eeeeee;">';
-        $item .= '<td width="50%" style="border-right: 1px solid #eeeeee;"><p style="line-height: 52px; margin: 0; font-size: 12px; color: #363636;">'.$product->title.'</p></td>';
-        $item .= '<td width="50%"><p style="line-height: 52px; margin: 0; font-size: 12px; color: #363636;">'.$product->code.'</p></td>';
+        $item = '<tr ' . $background . ' align="center" style="border-bottom: 1px solid #eeeeee;">';
+        $item .= '<td width="33%" style="border-right: 1px solid #eeeeee;"><p style="line-height: 52px; margin: 0; font-size: 12px; color: #363636;">' . $product->title . '</p></td>';
+        $item .= '<td width="33%" style="border-right: 1px solid #eeeeee;"><p style="line-height: 52px; margin: 0; font-size: 12px; color: #363636;">' . $product->code . '</p></td>';
+        $item .= '<td width="33%"><p style="line-height: 52px; margin: 0; font-size: 12px; color: #363636;">' . $product->price . '</p></td>';
         $item .= '</tr>';
 
         $tableRows .= $item;
@@ -56,20 +57,23 @@ if ($message_field!=="") {
 $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-  
+
 mail($to, $subject, $message, $headers);
 
-function check_input($data, $problem = ""){
+function check_input($data, $problem = "")
+{
     $data = htmlentities(trim(strip_tags(stripslashes($data))), ENT_NOQUOTES, "UTF-8");
 
-    if ($problem && strlen($data) == 0){
+    if ($problem && strlen($data) == 0) {
         show_error($problem);
     }
 
     return $data;
-};
+}
+;
 
-function show_error($myError) {
+function show_error($myError)
+{
     echo $myError;
     exit();
 }

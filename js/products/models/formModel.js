@@ -5,8 +5,8 @@ define(['backbone'], function() {
 
 	var ProductModel = Backbone.Model.extend({
 		defaults: {
-			name: 	'',
-			price: 	'',
+			name: '',
+			price: '',
 			parent: '',
 			code: ''
 		}

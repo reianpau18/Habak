@@ -6,6 +6,7 @@ define(['backbone'], function(){
 	var CategoryModel = Backbone.Model.extend({
 		defaults: {
 			name: '',
+			price: '',
 			oneRow: false,
 			addCodePath: false,
 			imagesPath:	'',

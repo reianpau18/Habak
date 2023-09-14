@@ -10,7 +10,7 @@ define([], function(){
 			{
 				name: "HABAK Black  (S)",
 				price: {
-					current: "650.00",
+					current: "650.00"
 				},
 				code: "HB001",
 				details: "",
@@ -20,7 +20,7 @@ define([], function(){
 			{
 				name: "HABAK Black  (M)",
 				price: {
-					current: "650.00",
+					current: "650.00"
 				},
 				code: "HB002",
 				details: "",
@@ -40,7 +40,7 @@ define([], function(){
 			{
 				name: "HABAK Black  (XL)",
 				price: {
-					current: "650.00",
+					current: "650.00"
 				},
 				code: "HB004",
 				details: "",
