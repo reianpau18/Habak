@@ -8,7 +8,7 @@ $subject_field = check_input($_POST["subject_field"]);
 $message_field = check_input($_POST["message_field"]);
 
 //$from = "reianpau18@habakclothing.store";
-$to = "reianthegreat18@gmail.com";
+$to = "reianpau18@habakclothing.store";
 
 
 if ($message_field !== "") {
