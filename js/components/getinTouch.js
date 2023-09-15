@@ -17,17 +17,14 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 
 		bindUiActions: function() {
 			$('form').submit(function(event) {
-				 if ( $('#g-recaptcha-response').val() === '' ) {
-        		event.preventDefault();
-       			 alert('Please check the recaptcha');
-    			}
+        			event.preventDefault();
 			});
 
 			$(".checkout").click(function() {
-				if ($(this).hasClass('preorder-btn')) {
+				if ($(this).hasClass('preorder-btn')){
 					$(window).trigger('fillField');
 				}
-
+				
 				GetinTouch.validateForm($(this));
 			});
 
@@ -40,6 +37,10 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 		validateForm: function(submit) {
 			var formValid = true,
 			 	thisForm = submit.closest('form');
+			if ($('#g-recaptcha-response').val() === ''){
+				formValid = false;
+				alert('Please check the recaptcha');
+    		}
 
 			$('input.required', thisForm).each(function() {
 				var thisInput = $(this),
