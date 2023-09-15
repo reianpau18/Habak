@@ -7,7 +7,7 @@ $prod_list = check_input($_POST["prCode_field"]);
 $subject_field = check_input($_POST["subject_field"]);
 $message_field = check_input($_POST["message_field"]);
 
-//$from = "reianpau18@habakclothing.store";
+$from = "reianpau18@habakclothing.store";
 $to = "reianpau18@habakclothing.store";
 
 
