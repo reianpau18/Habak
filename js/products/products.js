@@ -24,6 +24,13 @@ define(['jquery', 'products/defineCategories',
 		nextCat: null
 	};
 
+	var onloadCallback = function() {
+        		grecaptcha.render('g-recaptcha1', {
+          		sitekey : '6LeZxSooAAAAAGBiMRkdYO_NPfxMRVW3kYHqZRRN'
+
+        			});
+     			 };
+
 	var Products = {
 		init: function () {
 			// Create items collection

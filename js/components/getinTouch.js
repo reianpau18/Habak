@@ -2,6 +2,8 @@
 /* global define: false */
 define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 	'use strict';
+	//captcha
+	
 
 	var GetinTouch = {
 		data: {
@@ -13,6 +15,7 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 
 		init: function() {
 			this.bindUiActions();
+			
 		},
 
 		bindUiActions: function() {
@@ -44,10 +47,12 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 
 				if ($(this).attr('name') === "mail_field") {
 					if(thisInput==="" || !re.test(thisInput.val())){
+						alert('Input Error! Please try again.');
 						formValid = false;
 					} 
     			}else {
 					if(thisInput===""){
+						alert('Input Error! Please try again.');
 						formValid = false;
 					}
 				}
@@ -55,16 +60,16 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 			if ($('#g-recaptcha-response').val() === ''){
 				formValid = false;
 				alert('Please check the recaptcha');
-			}
+			}else{{
+				grecaptcha.reset('g-recaptcha1');
+			}}
             if (formValid) {
 				GetinTouch.sendForm(thisForm);
-				grecaptcha.reset('#g-recaptcha1');
 			} else {
 				if (!thisForm.parent().hasClass('products-form-block')) {
 					GetinTouch.bindPopup(GetinTouch.data.error);
 				} else {
-					submit.velocity("callout.shake", 500);
-					alert('Input Error! Please try again.');
+					submit.velocity("callout.shake", 500);	
 				}
 			}
 		},
