@@ -1,6 +1,6 @@
 /* jshint undef: true, unused: true */
 /* global define: false */
-define([], function(){
+define(['backbone'], function(){
 	return {
 		name: "T-shirts",
 		oneRow: false,
