@@ -4,7 +4,6 @@ $name_field = check_input($_POST["name_field"]);
 $mail_field = check_input($_POST["mail_field"]);
 $phone_field = check_input($_POST["phone_field"]);
 $prod_list = check_input($_POST["prCode_field"]);
-$prod_price_list = check_input($_POST["prPrice_field"]);
 $subject_field = check_input($_POST["subject_field"]);
 $message_field = check_input($_POST["message_field"]);
 
@@ -47,26 +46,9 @@ if ($message_field !== "") {
         $item .= '<td width="33%" style="border-right: 1px solid #eeeeee;"><p style="line-height: 52px; margin: 0; font-size: 12px; color: #363636;">' . $product->title . '</p></td>';
         $item .= '<td width="33%" style="border-right: 1px solid #eeeeee;"><p style="line-height: 52px; margin: 0; font-size: 12px; color: #363636;">' . $product->code . '</p></td>';
         $item .= '<td width="33%"><p style="line-height: 52px; margin: 0; font-size: 12px; color: #363636;">' . $product->price . '</p></td>';
-
-        $tableRows .= $item;
-    }
-
-    $message = str_replace('{{ prodList }}', $tableRows, $message);
-    $tableP = "";
-    $products = json_decode($prod_price_list);
-    foreach ($products as $index => $product) {
-        $odd = $index % 2;
-
-        if ($odd) {
-            $background = 'bgcolor="#eeeeee"';
-        } else {
-            $background = '';
-        }
-
-        $item .= '<td width="33%"><p style="line-height: 52px; margin: 0; font-size: 12px; color: #363636;">' . $product->price . '</p></td>';
         $item .= '</tr>';
 
-        $tableP .= $item;
+        $tableRows .= $item;
     }
 
     $message = str_replace('{{ prodList }}', $tableRows, $message);

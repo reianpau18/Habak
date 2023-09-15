@@ -6,10 +6,7 @@ define(['backbone'], function(){
 	var ItemModel = Backbone.Model.extend({
 		defaults: {
 			name: '',
-			price: {
-				current: '',
-				old: ''
-			},
+			price: '',
 			code: '',
 			thumb: '',
 			gallery: [],

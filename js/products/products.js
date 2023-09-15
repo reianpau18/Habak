@@ -90,19 +90,19 @@ define(['jquery', 'products/defineCategories',
 		  	// Bind custom scroll
 		  	$('.js-order-container').mCustomScrollbar();
 
-		  	// Send preorder
-		  	//$(window).on('fillField', function() {
-		  		//$('#prCode_field').val('');
-		  		//var prodList = [];
-		  		//s.formCollection.forEach(function (model) {
-		  			//prodList.push({
-		  				//title: model.get('name'),
-		  				//code: model.get('code'),
-						//price: model.get('price')
-		  			//});
-		  		//});
-		  		//$('#prCode_field').val(JSON.stringify(prodList));
-		  //	});
+		  	 //Send preorder
+		  	$(window).on('fillField', function() {
+		  		$('#prCode_field').val('');
+		  		var prodList = [];
+		  		s.formCollection.forEach(function (model) {
+		  			prodList.push({
+		  				title: model.get('name'),
+		  				code: model.get('code'),
+						price: model.get('price')
+		  			});
+		  		});
+		  		$('#prCode_field').val(JSON.stringify(prodList));
+		  	});
 
 		  	// Order sent
 		  	$(window).on('orderSent', function() {
