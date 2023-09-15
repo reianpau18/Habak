@@ -91,18 +91,7 @@ define(['jquery', 'products/defineCategories',
 		  	$('.js-order-container').mCustomScrollbar();
 
 		  	 //Send preorder
-		  	$(window).on('fillField', function() {
-		  		$('prCode_field').val('');
-		  		var prodList = [];
-		  		s.formCollection.forEach(function (model) {
-		  			prodList.push({
-		  				title: model.get('name'),
-						value: model.get('price'),
-		  				code: model.get('code')
-		  			});
-		  		});
-		  		$('prCode_field').val(JSON.stringify(prodList));
-		  	});
+	
 
 		  	// Order sent
 		  	$(window).on('orderSent', function() {
