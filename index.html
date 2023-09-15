@@ -36,7 +36,14 @@
     <!-- <link href="favicon.ico" rel="icon" type="image/x-icon" /> -->
     <link rel="icon" type="ico" href="favicon.ico" sizes="32x32" />
     <script src="js/lib/modernizr.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('g-recaptcha1', {
+          sitekey : '6LeZxSooAAAAAGBiMRkdYO_NPfxMRVW3kYHqZRRN'
+
+        });
+      };
+    </script>
     <!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
   </head>
   <body data-currency="₱">
@@ -467,7 +474,7 @@
                         id="prCode_field"
                         class="fillable-field l-hidden required custom-reveal products-code-list"
                       />
-                      <div class="g-recaptcha" id="g-recaptcha1" data-sitekey="6LeZxSooAAAAAGBiMRkdYO_NPfxMRVW3kYHqZRRN"></div>
+                      <div  id="g-recaptcha1"></div>
                       <input
                         type="submit"
                         value="Send"
@@ -483,7 +490,9 @@
       </div>
       <div class="product-details-modal"></div>
     </div>
-
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=en"
+        async defer>
+    </script>
     <script data-main="js/script.js" src="js/lib/require.js"></script>
   </body>
 </html>
