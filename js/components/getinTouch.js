@@ -59,11 +59,13 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 
 			if (formValid) {
 				GetinTouch.sendForm(thisForm);
+				grecaptcha.reset('#g-recaptcha1');
 			} else {
 				if (!thisForm.parent().hasClass('products-form-block')) {
 					GetinTouch.bindPopup(GetinTouch.data.error);
 				} else {
 					submit.velocity("callout.shake", 500);
+					alert('Input Error! Please try again.');
 				}
 			}
 		},
