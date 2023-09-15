@@ -60,11 +60,9 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 			if ($('#g-recaptcha-response').val() === ''){
 				formValid = false;
 				alert('Please check the recaptcha');
-			}else{{
-				grecaptcha.reset('g-recaptcha1');
-			}}
+			}
             if (formValid) {
-				GetinTouch.sendForm(thisForm);
+				GetinTouch.sendForm(thisForm);	
 			} else {
 				if (!thisForm.parent().hasClass('products-form-block')) {
 					GetinTouch.bindPopup(GetinTouch.data.error);
@@ -72,6 +70,8 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 					submit.velocity("callout.shake", 500);	
 				}
 			}
+			
+			grecaptcha.reset('g-recaptcha1');
 		},
 
 		sendForm: function(thisForm) {
