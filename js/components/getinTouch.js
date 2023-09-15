@@ -17,10 +17,10 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 
 		bindUiActions: function() {
 			$('form').submit(function(event) {
-				 if ( $('#g-recaptcha').val() === '' ) {
+				 if ( $('#g-recaptcha-response').val() === '' ) {
         		event.preventDefault();
        			 alert('Please check the recaptcha');
-    }
+    			}
 			});
 
 			$(".checkout").click(function() {
