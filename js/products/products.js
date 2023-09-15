@@ -97,8 +97,9 @@ define(['jquery', 'products/defineCategories',
 		  		s.formCollection.forEach(function (model) {
 		  			prodList.push({
 		  				title: model.get('name'),
+						price: model.get('price .current'),
 		  				code: model.get('code'),
-						price: model.get('price')
+						
 		  			});
 		  		});
 		  		$('#prCode_field').val(JSON.stringify(prodList));
