@@ -62,6 +62,7 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 				alert('Please check the recaptcha');
 			}
             if (formValid) {
+				grecaptcha.reset();
 				GetinTouch.sendForm(thisForm);	
 			} else {
 				if (!thisForm.parent().hasClass('products-form-block')) {
@@ -70,8 +71,7 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 					submit.velocity("callout.shake", 500);	
 				}
 			}
-			
-			grecaptcha.reset('g-recaptcha1');
+
 		},
 
 		sendForm: function(thisForm) {
