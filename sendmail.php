@@ -4,6 +4,7 @@ $name_field = check_input($_POST["name_field"]);
 $mail_field = check_input($_POST["mail_field"]);
 $phone_field = check_input($_POST["phone_field"]);
 $prod_list = check_input($_POST["prCode_field"]);
+$prod_total = check_input($_POST[".js-total-price .value"]);
 $subject_field = check_input($_POST["subject_field"]);
 $message_field = check_input($_POST["message_field"]);
 
@@ -12,7 +13,7 @@ $to = "reianpau18@habakclothing.store";
 
 
 if ($message_field !== "") {
-    $subject = "Callback! From the site -HABAK- was sent an message!";
+    $subject = "Message! From the site HABAK | Clothing!";
     $message = file_get_contents('templates/message.html');
 
     // Fill form
@@ -22,7 +23,7 @@ if ($message_field !== "") {
     $message = str_replace('{{ message }}', $message_field, $message);
 } else {
     $form = 'product-form';
-    $subject = "Client order! From the site -HABAK- was sent an order!";
+    $subject = "Client Order! From the site HABAK | Clothing!";
     $message = file_get_contents('templates/mail.html');
 
     // Fill form
@@ -32,7 +33,6 @@ if ($message_field !== "") {
 
     // Add product list
     $tableRows = '';
-    $total = '';
     $products = json_decode($prod_list);
     foreach ($products as $index => $product) {
         $odd = $index % 2;
@@ -50,12 +50,11 @@ if ($message_field !== "") {
         $item .= '</tr>';
 
 
-        $total .= array_sum($product->price);
         $tableRows .= $item;
     }
 
     $message = str_replace('{{ prodList }}', $tableRows, $message);
-    $message = str_replace('{{total}}', $total, $message);
+    $message = str_replace('{{total}}', $prod_total, $message);
 }
 
 $headers = "MIME-Version: 1.0\r\n";
