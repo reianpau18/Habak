@@ -107,7 +107,7 @@ define(['jquery', 'products/defineCategories',
 		  	// Order sent
 		  	$(window).on('orderSent', function() {
 		  		s.formCollection.reset();
-				$('preorder-btn').disabled = true;
+				$('preorder-btn').disabled = false;
 		  		Products.cart.getLength(0);
 		  		Products.cart.getTotal();
 
