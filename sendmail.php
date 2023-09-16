@@ -50,7 +50,7 @@ if ($message_field !== "") {
         $item .= '</tr>';
 
 
-        $total = array_sum($product->price);
+        $total .= array_sum($product->price);
         $tableRows .= $item;
     }
 

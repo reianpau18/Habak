@@ -104,7 +104,6 @@ define(['jquery', 'products/defineCategories',
 		  		$('#prCode_field').val(JSON.stringify(prodList));
 		  	});
 
-
 		  	// Order sent
 		  	$(window).on('orderSent', function() {
 		  		s.formCollection.reset();
