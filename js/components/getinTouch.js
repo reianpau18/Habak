@@ -47,12 +47,12 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 
 				if ($(this).attr('name') === "mail_field") {
 					if(thisInput==="" || !re.test(thisInput.val())){
-						alert('Input Error! Please try again.');
+						alert('You left a field empty! Please try again.');
 						formValid = false;
 					} 
     			}else {
 					if(thisInput===""){
-						alert('Input Error! Please try again.');
+						alert('You left a field empty! Please try again.');
 						formValid = false;
 					}
 				}
