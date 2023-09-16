@@ -7,7 +7,7 @@ define(['components/mapStyles'], function(MapStyles){
 		init: function() {
 
 			var	mapBlock = document.getElementById('map-block');
-			var myLatlng = new google.maps.LatLng(40.799645, -73.952437);
+			var myLatlng = new google.maps.LatLng(10.3347631200796, 123.89672756446967);
 			
 			var	mapOptions = {
 			      	zoom: 15,
