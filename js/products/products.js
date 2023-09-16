@@ -98,7 +98,8 @@ define(['jquery', 'products/defineCategories',
 		  			prodList.push({
 		  				title: model.get('name'),
 		  				code: model.get('code'),
-						price: model.get('price')
+						price: model.get('price'),
+						total: model.get('total')
 		  			});
 		  		});
 		  		$('#prCode_field').val(JSON.stringify(prodList));

@@ -47,6 +47,8 @@ if ($message_field !== "") {
         $item .= '<td width="33%" style="border-right: 1px solid #eeeeee;"><p style="line-height: 52px; margin: 0; font-size: 12px; color: #363636;">' . $product->code . '</p></td>';
         $item .= '<td width="33%"><p style="line-height: 52px; margin: 0; font-size: 12px; color: #363636;">' . $product->price . '</p></td>';
         $item .= '</tr>';
+        $item = '<tr ' . $background . ' align="center" style="border-bottom: 1px solid #eeeeee;">';
+        $item .= '<td width="33%" style="border-right: 1px solid #eeeeee;"><p style="line-height: 52px; margin-left: 65%; font-size: 12px; color: #363636;">' . $product->total . '</p></td>';
 
         $tableRows .= $item;
     }
