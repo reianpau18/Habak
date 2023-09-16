@@ -63,6 +63,7 @@ define(['jquery', 'bPopup', 'velocity', 'velocityUi'], function($){
 			}
             if (formValid) {
 				grecaptcha.reset();
+				$('preorder-btn').disabled = true;
 				GetinTouch.sendForm(thisForm);	
 			} else {
 				if (!thisForm.parent().hasClass('products-form-block')) {
