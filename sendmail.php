@@ -54,7 +54,7 @@ if ($message_field !== "") {
     }
 
     $message = str_replace('{{ prodList }}', $tableRows, $message);
-    $message = str_replace('{{total}}', $total, $message);
+    $message = str_replace('{{total}}', $prod_total, $message);
 }
 
 $headers = "MIME-Version: 1.0\r\n";
