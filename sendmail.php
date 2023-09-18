@@ -4,7 +4,7 @@ $name_field = check_input($_POST["name_field"]);
 $mail_field = check_input($_POST["mail_field"]);
 $phone_field = check_input($_POST["phone_field"]);
 $prod_list = check_input($_POST["prCode_field"]);
-$prod_total = check_input($_POST[".js-total-price .value"]);
+$prod_total = check_input($_POST["prTotal_field"]);
 $subject_field = check_input($_POST["subject_field"]);
 $message_field = check_input($_POST["message_field"]);
 
@@ -54,7 +54,9 @@ if ($message_field !== "") {
     }
 
     $message = str_replace('{{ prodList }}', $tableRows, $message);
-    $message = str_replace('{{total}}', $prod_total, $message);
+
+    $total = json_decode($prod_total);
+    $message = str_replace('{{total}}', $total, $message);
 }
 
 $headers = "MIME-Version: 1.0\r\n";
