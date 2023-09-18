@@ -54,8 +54,6 @@ if ($message_field !== "") {
     }
 
     $message = str_replace('{{ prodList }}', $tableRows, $message);
-
-    $total = json_decode($prod_total);
     $message = str_replace('{{total}}', $total, $message);
 }
 

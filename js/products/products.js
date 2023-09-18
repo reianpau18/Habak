@@ -141,6 +141,7 @@ define(['jquery', 'products/defineCategories',
 					total += parseFloat(model.get('price'));
 				});
 				$('.js-total-price .value').html(total.toFixed(2));
+				$('#prTotal_field').val(JSON.stringify(total));
 			}
 		},
 
